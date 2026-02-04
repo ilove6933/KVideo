@@ -34,8 +34,8 @@ export function DesktopRightControls({
                     <button
                         onClick={onTogglePictureInPicture}
                         className="btn-icon"
-                        aria-label="画中画"
-                        title="画中画"
+                        aria-label="畫中畫"
+                        title="畫中畫"
                     >
                         <Icons.PictureInPicture size={20} />
                     </button>
@@ -62,8 +62,8 @@ export function DesktopRightControls({
                     <button
                         onClick={onShowCastMenu}
                         className="btn-icon"
-                        aria-label="投屏"
-                        title="投屏"
+                        aria-label="投放"
+                        title="投放"
                     >
                         <Icons.Cast size={20} />
                     </button>
@@ -74,7 +74,7 @@ export function DesktopRightControls({
             <button
                 onClick={onToggleFullscreen}
                 className="btn-icon"
-                aria-label={isFullscreen ? '退出全屏' : '全屏'}
+                aria-label={isFullscreen ? '退出全螢幕' : '全螢幕'}
             >
                 {isFullscreen ? <Icons.Minimize size={20} /> : <Icons.Maximize size={20} />}
             </button>
