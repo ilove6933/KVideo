@@ -20,7 +20,7 @@ export function TagInput({
                 value={newTagInput}
                 onChange={(e) => onNewTagInputChange(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && onAddTag()}
-                placeholder="添加自定义标签..."
+                placeholder="添加自訂義標籤..."
                 className="flex-1 bg-[var(--glass-bg)] backdrop-blur-xl border border-[var(--glass-border)] text-[var(--text-color)] px-4 py-2 focus:outline-none focus:border-[var(--accent-color)] transition-colors rounded-[var(--radius-2xl)]"
             />
             <button
