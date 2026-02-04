@@ -66,14 +66,14 @@ export function PopularFeatures({ onSearch }: PopularFeaturesProps) {
             className={`relative z-10 py-2.5 text-sm font-bold transition-colors duration-300 cursor-pointer flex justify-center items-center ${contentType === 'movie' ? 'text-white' : 'text-[var(--text-color-secondary)] hover:text-[var(--text-color)]'
               }`}
           >
-            电影
+            電影
           </button>
           <button
             onClick={() => setContentType('tv')}
             className={`relative z-10 py-2.5 text-sm font-bold transition-colors duration-300 cursor-pointer flex justify-center items-center ${contentType === 'tv' ? 'text-white' : 'text-[var(--text-color-secondary)] hover:text-[var(--text-color)]'
               }`}
           >
-            电视剧
+            電視劇
           </button>
         </div>
       </div>
