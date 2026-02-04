@@ -21,8 +21,8 @@ export function SettingsHeader() {
                     </svg>
                 </div>
                 <div>
-                    <h1 className="text-3xl font-bold text-[var(--text-color)]">设置</h1>
-                    <p className="text-[var(--text-color-secondary)]">管理应用程序配置</p>
+                    <h1 className="text-3xl font-bold text-[var(--text-color)]">設置</h1>
+                    <p className="text-[var(--text-color-secondary)]">管理應用程序配置</p>
                 </div>
             </div>
         </div>
