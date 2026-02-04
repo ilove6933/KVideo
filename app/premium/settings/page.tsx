@@ -39,8 +39,8 @@ export default function PremiumSettingsPage() {
                                 </svg>
                             </Link>
                             <div>
-                                <h1 className="text-2xl font-bold text-[var(--text-color)]">高级源设置</h1>
-                                <p className="text-sm text-[var(--text-color-secondary)]">管理高级内容来源</p>
+                                <h1 className="text-2xl font-bold text-[var(--text-color)]">高級源設置</h1>
+                                <p className="text-sm text-[var(--text-color-secondary)]">管理高級内容來源</p>
                             </div>
                         </div>
                     </div>
@@ -73,9 +73,9 @@ export default function PremiumSettingsPage() {
 
             <ConfirmDialog
                 isOpen={isRestoreDefaultsDialogOpen}
-                title="恢复默认高级源"
-                message="这将重置所有高级源为默认配置。自定义源将被删除。是否继续？"
-                confirmText="恢复"
+                title="恢復默認高級源"
+                message="這將重置所有高級源為默認配置。自定義源將被删除。是否繼續？"
+                confirmText="恢復"
                 cancelText="取消"
                 onConfirm={handleRestoreDefaults}
                 onCancel={() => setIsRestoreDefaultsDialogOpen(false)}
