@@ -40,7 +40,7 @@ export function TypeBadgeItem({
       }}
       tabIndex={0}
       aria-pressed={isSelected}
-      aria-label={`${type} 类型，${count} 个视频${isSelected ? '，已选中' : ''}`}
+      aria-label={`${type} 類型，${count} ㄍ影片${isSelected ? '，已選中' : ''}`}
       className={`
         inline-flex items-center gap-1.5 px-4 py-2
         rounded-full
