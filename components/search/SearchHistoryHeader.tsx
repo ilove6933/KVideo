@@ -14,7 +14,7 @@ export function SearchHistoryHeader({ onClearAll }: SearchHistoryHeaderProps) {
             <div className="flex items-center gap-2">
                 <Icons.Clock size={16} className="text-[var(--text-color-secondary)]" />
                 <span className="text-sm font-medium text-[var(--text-color-secondary)]">
-                    搜索历史
+                    搜索紀錄
                 </span>
             </div>
             <button
@@ -24,7 +24,7 @@ export function SearchHistoryHeader({ onClearAll }: SearchHistoryHeaderProps) {
                     onClearAll();
                 }}
                 className="text-xs text-[var(--accent-color)] hover:underline transition-all cursor-pointer"
-                aria-label="清除所有历史"
+                aria-label="清除所有紀錄"
             >
                 清除全部
             </button>
