@@ -2,96 +2,75 @@
 
 import React, { useState } from 'react';
 
-// 定義下載按鈕接收的參數
 interface DownloadButtonProps {
-  url: string;      // 影片連結
-  title?: string;   // 影片標題（用於檔名）
+  url: string;
+  title?: string;
 }
 
 export default function DownloadButton({ url, title = 'video' }: DownloadButtonProps) {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [msg, setMsg] = useState('');
+  const [status, setStatus] = useState<'idle' | 'copied'>('idle');
 
   const handleDownload = async () => {
     if (!url) return;
 
-    // 判斷是否為 M3U8 (HLS) 串流
-    const isM3U8 = url.toLowerCase().includes('.m3u8');
-
-    if (isM3U8) {
-      // 策略 A: 如果是 m3u8，自動複製連結並提示
-      try {
-        await navigator.clipboard.writeText(url);
-        setStatus('success');
-        setMsg('串流連結已複製！請使用 IDM 或下載器下載');
-        setTimeout(() => { setStatus('idle'); setMsg(''); }, 3000);
-      } catch (err) {
-        setStatus('error');
-        setMsg('複製失敗');
-      }
-    } else {
-      // 策略 B: 如果是 MP4/一般檔案，嘗試瀏覽器直接下載
-      setStatus('loading');
-      try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Network error');
-        
-        const blob = await response.blob();
-        const blobUrl = window.URL.createObjectURL(blob);
-        
-        const a = document.createElement('a');
-        a.style.display = 'none';
-        a.href = blobUrl;
-        a.download = `${title}.mp4`;
-        
-        document.body.appendChild(a);
-        a.click();
-        
-        window.URL.revokeObjectURL(blobUrl);
-        document.body.removeChild(a);
-        
-        setStatus('success');
-        setMsg('下載已開始');
-        setTimeout(() => { setStatus('idle'); setMsg(''); }, 3000);
-      } catch (error) {
-        // 如果瀏覽器阻擋 (CORS)，改為開新視窗
-        console.error(error);
-        window.open(url, '_blank');
+    // 1. 複製連結到剪貼簿
+    try {
+      await navigator.clipboard.writeText(url);
+      setStatus('copied');
+      
+      // 2. 設定延遲後跳轉，讓用戶看清楚提示
+      setTimeout(() => {
+        // 這裡選用的是一個乾淨、開源的 m3u8 下載器
+        // 備用選項: 'https://m3u8-downloader.com/'
+        const toolUrl = 'https://tools.thatwind.com/tool/m3u8downloader';
+        window.open(toolUrl, '_blank');
         setStatus('idle');
-      }
+      }, 800);
+
+    } catch (err) {
+      console.error('複製失敗', err);
+      // 如果自動複製失敗，至少打開網站
+      window.open('https://tools.thatwind.com/tool/m3u8downloader', '_blank');
     }
   };
 
   return (
-    <div className="flex flex-col items-start gap-2 mt-4">
+    <div className="flex flex-col items-start gap-2">
       <button
         onClick={handleDownload}
-        disabled={status === 'loading'}
+        disabled={!url}
         className={`
-          flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all
-          ${status === 'loading' ? 'bg-gray-600 cursor-wait' : 'bg-primary hover:bg-primary/90'}
-          text-white
+          flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium transition-all text-sm shadow-lg
+          ${!url 
+            ? 'bg-gray-700 text-gray-500 cursor-not-allowed' 
+            : status === 'copied'
+              ? 'bg-green-600 text-white scale-95'
+              : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white'
+          }
         `}
-        style={{ backgroundColor: '#2563eb' }} // 預設給一個藍色，避免 Tailwind 變數未定義
+        title="複製連結並前往下載網站"
       >
-        {/* 下載圖示 SVG */}
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-        
-        <span>
-          {status === 'loading' ? '下載處理中...' : '下載影片 / 複製連結'}
-        </span>
+        {status === 'copied' ? (
+          <>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>連結已複製！正在跳轉...</span>
+          </>
+        ) : (
+          <>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span>下載影片 (跳轉)</span>
+          </>
+        )}
       </button>
-
-      {/* 狀態提示訊息 */}
-      {msg && (
-        <span className={`text-sm ${status === 'error' ? 'text-red-500' : 'text-green-500'}`}>
-          {msg}
-        </span>
-      )}
+      
+      {/* 提示文字 */}
+      <span className="text-[10px] text-gray-400 opacity-80 pl-1">
+        * 將自動複製連結並前往轉檔網站
+      </span>
     </div>
   );
 }
