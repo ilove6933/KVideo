@@ -81,7 +81,7 @@ export function VideoPlayer({
 
   // Get video metadata from URL params
   const source = searchParams.get('source') || '';
-  const title = searchParams.get('title') || '未知视频';
+  const title = searchParams.get('title') || '未知影片';
 
   // Get saved progress for this video
   const getSavedProgress = () => {
