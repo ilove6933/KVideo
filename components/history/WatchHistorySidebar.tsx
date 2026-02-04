@@ -126,11 +126,11 @@ export function WatchHistorySidebar({ isPremium = false }: { isPremium?: boolean
       {/* Confirm Dialog */}
       <ConfirmDialog
         isOpen={deleteConfirm.isOpen}
-        title={deleteConfirm.isClearAll ? '清空历史记录' : '删除历史记录'}
+        title={deleteConfirm.isClearAll ? '清空觀看紀錄' : '删除觀看紀錄'}
         message={
           deleteConfirm.isClearAll
-            ? '确定要清空所有观看历史吗？此操作无法撤销。'
-            : '确定要删除这条历史记录吗？'
+            ? '確定要清空所有觀看紀錄ㄇ？此操作無法回復喔。'
+            : '確定要删除這個觀看紀錄ㄇ？'
         }
         onConfirm={confirmDelete}
         onCancel={cancelDelete}
