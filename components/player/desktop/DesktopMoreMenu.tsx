@@ -53,10 +53,10 @@ export function DesktopMoreMenu({
     const [isAdFilterOpen, setAdFilterOpen] = React.useState(false);
 
     const AD_FILTER_LABELS: Record<string, string> = {
-        off: '关闭',
-        keyword: '关键词',
+        off: '關閉',
+        keyword: '關鍵字',
         heuristic: '智能(Beta)',
-        aggressive: '激进'
+        aggressive: '激進'
     };
 
     const [isFullscreen, setIsFullscreen] = React.useState(false);
@@ -170,14 +170,14 @@ export function DesktopMoreMenu({
                         className="w-full px-3 py-2 sm:px-4 sm:py-2.5 text-left text-xs sm:text-sm text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_15%,transparent)] rounded-[var(--radius-2xl)] transition-colors flex items-center gap-2 sm:gap-3 cursor-pointer"
                     >
                         <Icons.Link size={16} className="sm:w-[18px] sm:h-[18px]" />
-                        <span>复制原链接</span>
+                        <span>複製原連結</span>
                     </button>
                     <button
                         onClick={() => onCopyLink('proxy')}
                         className="w-full px-3 py-2 sm:px-4 sm:py-2.5 text-left text-xs sm:text-sm text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_15%,transparent)] rounded-[var(--radius-2xl)] transition-colors flex items-center gap-2 sm:gap-3 mt-1 cursor-pointer"
                     >
                         <Icons.Link size={16} className="sm:w-[18px] sm:h-[18px]" />
-                        <span>复制代理链接</span>
+                        <span>複製代理連結</span>
                     </button>
                 </>
             ) : (
@@ -186,7 +186,7 @@ export function DesktopMoreMenu({
                     className="w-full px-3 py-2 sm:px-4 sm:py-2.5 text-left text-xs sm:text-sm text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_15%,transparent)] rounded-[var(--radius-2xl)] transition-colors flex items-center gap-2 sm:gap-3 cursor-pointer"
                 >
                     <Icons.Link size={16} className="sm:w-[18px] sm:h-[18px]" />
-                    <span>复制链接</span>
+                    <span>複製連結</span>
                 </button>
             )}
 
@@ -206,7 +206,7 @@ export function DesktopMoreMenu({
                         }}
                         className="flex items-center gap-1 sm:gap-1.5 bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-color)] text-[10px] sm:text-xs rounded-[var(--radius-2xl)] px-2 sm:px-2.5 py-1 sm:py-1.5 outline-none hover:border-[var(--accent-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_5%,transparent)] transition-all cursor-pointer whitespace-nowrap"
                     >
-                        <span>{fullscreenType === 'native' ? '系统全屏' : '网页全屏'}</span>
+                        <span>{fullscreenType === 'native' ? '系统全螢幕' : '網頁全螢幕˙'}</span>
                         <Icons.Maximize size={12} className="text-[var(--text-color-secondary)]" />
                     </button>
                 </div>
@@ -216,7 +216,7 @@ export function DesktopMoreMenu({
             <div className="px-3 py-2 sm:px-4 sm:py-2.5 flex items-center justify-between gap-4 sm:gap-6">
                 <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[var(--text-color)]">
                     <Icons.Zap size={16} className="sm:w-[18px] sm:h-[18px]" />
-                    <span>显示模式指示器</span>
+                    <span>顯示指示螢幕</span>
                 </div>
                 <button
                     onClick={() => setShowModeIndicator(!showModeIndicator)}
@@ -238,7 +238,7 @@ export function DesktopMoreMenu({
             <div className="px-3 py-2 sm:px-4 sm:py-2.5 flex items-center justify-between gap-4 sm:gap-6">
                 <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[var(--text-color)]">
                     <Icons.ShieldAlert size={16} className="sm:w-[18px] sm:h-[18px]" />
-                    <span>广告过滤</span>
+                    <span>廣告過濾</span>
                 </div>
                 {/* Custom Ad Filter Mode Selector */}
                 <div className="relative">
@@ -278,7 +278,7 @@ export function DesktopMoreMenu({
             <div className="px-3 py-2 sm:px-4 sm:py-2.5 flex items-center justify-between gap-4 sm:gap-6">
                 <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[var(--text-color)]">
                     <Icons.SkipForward size={16} className="sm:w-[18px] sm:h-[18px]" />
-                    <span>自动下一集</span>
+                    <span>自動下一集</span>
                 </div>
                 <button
                     onClick={() => setAutoNextEpisode(!autoNextEpisode)}
@@ -301,7 +301,7 @@ export function DesktopMoreMenu({
                 <div className="flex items-center justify-between gap-4 sm:gap-6">
                     <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[var(--text-color)]">
                         <Icons.FastForward size={16} className="sm:w-[18px] sm:h-[18px]" />
-                        <span>跳过片头</span>
+                        <span>跳過廢話</span>
                     </div>
                     <button
                         onClick={() => setAutoSkipIntro(!autoSkipIntro)}
@@ -341,7 +341,7 @@ export function DesktopMoreMenu({
                 <div className="flex items-center justify-between gap-4 sm:gap-6">
                     <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[var(--text-color)]">
                         <Icons.Rewind size={16} className="sm:w-[18px] sm:h-[18px]" />
-                        <span>跳过片尾</span>
+                        <span>跳過片尾</span>
                     </div>
                     <button
                         onClick={() => setAutoSkipOutro(!autoSkipOutro)}
@@ -386,8 +386,8 @@ export function DesktopMoreMenu({
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
                 className="group flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95"
-                aria-label="更多选项"
-                title="更多选项"
+                aria-label="更多選項"
+                title="更多選項"
             >
                 <Icons.MoreHorizontal className="text-white/80 group-hover:text-white w-[20px] h-[20px] sm:w-[24px] sm:h-[24px]" />
             </button>
