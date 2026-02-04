@@ -23,17 +23,17 @@ export function PlayerSettings({
 }: PlayerSettingsProps) {
     return (
         <div className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-[var(--radius-2xl)] shadow-[var(--shadow-sm)] p-6 mb-6">
-            <h2 className="text-xl font-semibold text-[var(--text-color)] mb-4">播放器设置</h2>
+            <h2 className="text-xl font-semibold text-[var(--text-color)] mb-4">播放器設置</h2>
 
             <div className="space-y-6">
                 {/* Fullscreen Mode Selection */}
                 <div>
                     <h3 className="font-medium text-[var(--text-color)] mb-2 inline-flex items-center gap-2">
                         <Icons.Maximize size={18} className="text-[var(--accent-color)]" />
-                        默认全屏方式
+                        默認全螢幕方式
                     </h3>
                     <p className="text-sm text-[var(--text-color-secondary)] mb-4">
-                        选择在桌面端点击播放器全屏按钮时的行为
+                        選擇在桌面端點擊播放器全螢幕按鈕時的行為
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <button
@@ -43,8 +43,8 @@ export function PlayerSettings({
                                 : 'bg-[var(--glass-bg)] border-[var(--glass-border)] text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)]'
                                 }`}
                         >
-                            <div className="font-semibold">系统全屏</div>
-                            <div className="text-sm opacity-80 mt-1">进入浏览器原生全屏状态</div>
+                            <div className="font-semibold">系统全螢幕</div>
+                            <div className="text-sm opacity-80 mt-1">進入瀏覽器原生全螢幕狀態</div>
                         </button>
                         <button
                             onClick={() => onFullscreenTypeChange('window')}
@@ -53,8 +53,8 @@ export function PlayerSettings({
                                 : 'bg-[var(--glass-bg)] border-[var(--glass-border)] text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)]'
                                 }`}
                         >
-                            <div className="font-semibold">网页全屏</div>
-                            <div className="text-sm opacity-80 mt-1">播放器填满当前浏览器窗口</div>
+                            <div className="font-semibold">網頁全螢幕</div>
+                            <div className="text-sm opacity-80 mt-1">播放器填滿當前瀏覽器窗口</div>
                         </button>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ export function PlayerSettings({
                         代理播放模式
                     </h3>
                     <p className="text-sm text-[var(--text-color-secondary)] mb-4">
-                        控制视频播放时的网络请求策略
+                        控制影片播放時的網路請求策略
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <button
@@ -78,8 +78,8 @@ export function PlayerSettings({
                                 : 'bg-[var(--glass-bg)] border-[var(--glass-border)] text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)]'
                                 }`}
                         >
-                            <div className="font-semibold">智能重试 (推荐)</div>
-                            <div className="text-sm opacity-80 mt-1">直连优先，失败时尝试代理</div>
+                            <div className="font-semibold">智能重試 (推薦)</div>
+                            <div className="text-sm opacity-80 mt-1">直連優先，失敗時嘗試代理</div>
                         </button>
                         <button
                             onClick={() => onProxyModeChange('none')}
@@ -88,8 +88,8 @@ export function PlayerSettings({
                                 : 'bg-[var(--glass-bg)] border-[var(--glass-border)] text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)]'
                                 }`}
                         >
-                            <div className="font-semibold">仅直连</div>
-                            <div className="text-sm opacity-80 mt-1">不使用代理，失败则报错</div>
+                            <div className="font-semibold">僅直連</div>
+                            <div className="text-sm opacity-80 mt-1">不使用代理，失敗則報錯</div>
                         </button>
                         <button
                             onClick={() => onProxyModeChange('always')}
@@ -98,8 +98,8 @@ export function PlayerSettings({
                                 : 'bg-[var(--glass-bg)] border-[var(--glass-border)] text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)]'
                                 }`}
                         >
-                            <div className="font-semibold">总是代理</div>
-                            <div className="text-sm opacity-80 mt-1">所有请求都通过代理转发</div>
+                            <div className="font-semibold">總是代理</div>
+                            <div className="text-sm opacity-80 mt-1">所有請求都通過代理轉發</div>
                         </button>
                     </div>
                 </div>
