@@ -13,10 +13,10 @@ export function HistoryEmptyState() {
         className="text-[var(--text-color-secondary)] opacity-50 mb-4" 
       />
       <p className="text-[var(--text-color-secondary)] text-lg">
-        暂无观看历史
+        目前沒有歷史觀看紀錄
       </p>
       <p className="text-[var(--text-color-secondary)] text-sm mt-2 opacity-70">
-        您观看的视频会自动记录在这里
+        您的觀看紀錄在這邊
       </p>
     </div>
   );
