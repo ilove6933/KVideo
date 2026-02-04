@@ -9,7 +9,7 @@ export function VideoPlayerEmpty() {
             <div className="aspect-video bg-[var(--glass-bg)] backdrop-blur-[25px] saturate-[180%] rounded-[var(--radius-2xl)] flex items-center justify-center border border-[var(--glass-border)]">
                 <div className="text-center text-[var(--text-secondary)]">
                     <Icons.TV size={64} className="text-[var(--text-color-secondary)] mx-auto mb-4" />
-                    <p>暂無播放源</p>
+                    <p>暂無來源</p>
                 </div>
             </div>
         </Card>
