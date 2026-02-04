@@ -46,7 +46,7 @@ export function TagManager({
           className="text-sm text-[var(--text-color-secondary)] hover:text-[var(--accent-color)] transition-colors flex items-center gap-2 cursor-pointer"
         >
           <Icons.Tag size={16} />
-          {showTagManager ? '完成' : '管理标签'}
+          {showTagManager ? '完成' : '管理標籤'}
         </button>
         {showTagManager && (
           <button
@@ -54,7 +54,7 @@ export function TagManager({
             className="text-sm text-[var(--text-color-secondary)] hover:text-[var(--accent-color)] transition-colors flex items-center gap-2 cursor-pointer"
           >
             <Icons.RefreshCw size={16} />
-            恢复默认
+            恢復默認
           </button>
         )}
       </div>
@@ -72,7 +72,7 @@ export function TagManager({
       {isLoadingTags ? (
         <div className="flex items-center gap-2 py-4">
           <Icons.RefreshCw size={16} className="animate-spin text-[var(--accent-color)]" />
-          <span className="text-sm text-[var(--text-color-secondary)]">正在加载标签...</span>
+          <span className="text-sm text-[var(--text-color-secondary)]">正在加載標籤...</span>
         </div>
       ) : (
         <TagList
