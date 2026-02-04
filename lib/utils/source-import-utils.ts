@@ -74,7 +74,7 @@ export function parseSourcesFromJson(jsonString: string): ImportResult {
     } else if (data.list && Array.isArray(data.list)) {
         sourcesArray = data.list;
     } else {
-        throw new Error('无法识别的JSON格式');
+        throw new Error('無法識別的JSON格式');
     }
 
     const normalSources: VideoSource[] = [];
@@ -129,7 +129,7 @@ export async function fetchSourcesFromUrl(url: string): Promise<ImportResult> {
 export function createSubscription(name: string, url: string): SourceSubscription {
     return {
         id: `sub_${Date.now()}_${Math.random().toString(36).substring(7)}`,
-        name: name.trim() || '未命名订阅',
+        name: name.trim() || '未命名訂閱',
         url: url.trim(),
         lastUpdated: 0,
         autoRefresh: true,
