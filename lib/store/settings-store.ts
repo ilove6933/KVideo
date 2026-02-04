@@ -36,7 +36,7 @@ export interface AppSettings {
   skipIntroSeconds: number;
   autoSkipOutro: boolean;
   skipOutroSeconds: number;
-  showModeIndicator: boolean; // Show '直连模式'/'代理模式' badge on player
+  showModeIndicator: boolean; // Show '直連模式'/'代理模式' badge on player
   adFilter: boolean; // Filter ad tags from m3u8 (legacy, kept for compatibility)
   adFilterMode: AdFilterMode; // 'off' | 'keyword' | 'heuristic' | 'aggressive'
   adKeywords: string[]; // Dynamically loaded ad keywords
