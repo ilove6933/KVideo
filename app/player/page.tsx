@@ -101,7 +101,7 @@ function PlayerContent() {
 
       addToHistory(
         videoId,
-        videoData.vod_name || title || '未知视频',
+        videoData.vod_name || title || '未知影片',
         playUrl,
         currentEpisode,
         source,
@@ -162,7 +162,7 @@ function PlayerContent() {
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
             <div className="animate-spin rounded-full h-16 w-16 border-4 border-[var(--accent-color)] border-t-transparent mb-4"></div>
-            <p className="text-[var(--text-color-secondary)]">正在加载视频详情...</p>
+            <p className="text-[var(--text-color-secondary)]">正在加載影片詳情...</p>
           </div>
         ) : videoError && !videoData ? (
           <PlayerError
@@ -201,7 +201,7 @@ function PlayerContent() {
                     <FavoriteButton
                       videoId={videoId}
                       source={source}
-                      title={videoData.vod_name || title || '未知视频'}
+                      title={videoData.vod_name || title || '未知影片'}
                       poster={videoData.vod_pic}
                       type={videoData.type_name}
                       year={videoData.vod_year}
@@ -209,7 +209,7 @@ function PlayerContent() {
                       isPremium={isPremium}
                     />
                     <span className="text-sm text-[var(--text-color-secondary)]">
-                      收藏这个视频
+                      收藏這個影片
                     </span>
                   </div>
 
@@ -232,9 +232,9 @@ function PlayerContent() {
                 {groupedSources.length > 0 && (
                   <SegmentedControl
                     options={[
-                      { label: '选集', value: 'episodes' },
-                      { label: '简介', value: 'info' },
-                      { label: '来源', value: 'sources' as const },
+                      { label: '選集', value: 'episodes' },
+                      { label: '簡介', value: 'info' },
+                      { label: '來源', value: 'sources' as const },
                     ].filter(opt => opt.value !== 'sources' || groupedSources.length > 1)}
                     value={activeTab}
                     // 這裡加上了類型斷言，解決 build error
