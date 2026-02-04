@@ -59,7 +59,7 @@ export function SearchHistoryDropdown({
       ref={dropdownRef}
       className="search-history-dropdown absolute top-full left-0 right-0 mt-2 z-[9999]"
       role="listbox"
-      aria-label="搜索历史"
+      aria-label="搜索紀錄"
       onMouseDown={(e) => {
         // Prevent blur when clicking inside dropdown
         e.preventDefault();
