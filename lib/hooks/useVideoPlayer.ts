@@ -91,7 +91,7 @@ export function useVideoPlayer(
 
       if (!response.ok) {
         if (response.status === 404) {
-          setVideoError(data.error || '该视频源不可用。请返回并尝试其他来源。');
+          setVideoError(data.error || '該影片來源不可用。請返回並嘗試其他來源。');
           setLoading(false);
           return;
         }
@@ -114,15 +114,15 @@ export function useVideoPlayer(
           setCurrentEpisode(validIndex);
           setPlayUrl(episodeUrl);
         } else {
-          setVideoError('该来源没有可播放的剧集');
+          setVideoError('該來源没有可播放的劇集');
           setLoading(false);
         }
       } else {
-        throw new Error(data.error || '来自 API 的响应无效');
+        throw new Error(data.error || '來自 API 的回應無效');
       }
     } catch (error) {
       console.error('Failed to fetch video details:', error);
-      setVideoError(error instanceof Error ? error.message : '加载视频详情失败。');
+      setVideoError(error instanceof Error ? error.message : '載入影片詳情失敗。');
       setLoading(false);
     }
   }, [videoId, source]);
