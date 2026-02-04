@@ -4,14 +4,14 @@ export const SEARCH_HISTORY_KEY = 'kvideo-search-history';
 export const WATCH_HISTORY_KEY = 'kvideo-watch-history';
 
 export const sortOptions = {
-    'default': '默认排序',
-    'relevance': '按相关性',
-    'latency-asc': '延迟低到高',
-    'date-desc': '发布时间（新到旧）',
-    'date-asc': '发布时间（旧到新）',
-    'rating-desc': '按评分（高到低）',
-    'name-asc': '按名称（A-Z）',
-    'name-desc': '按名称（Z-A）',
+    'default': '默認排序',
+    'relevance': '按相關性',
+    'latency-asc': '延遲低到高',
+    'date-desc': '發佈时間（新到舊）',
+    'date-asc': '發佈時間（舊到新）',
+    'rating-desc': '按評分（高到低）',
+    'name-asc': '按名稱（A-Z）',
+    'name-desc': '按名稱（Z-A）',
 } as const;
 
 export function exportSettings(settings: AppSettings, includeHistory: boolean = true): string {
