@@ -13,7 +13,7 @@ interface SearchBoxProps {
     placeholder?: string;
 }
 
-export function SearchBox({ onSearch, onClear, initialQuery = '', placeholder = '搜索电影、电视剧、综艺...' }: SearchBoxProps) {
+export function SearchBox({ onSearch, onClear, initialQuery = '', placeholder = '輸入大陸的片名搜尋...會自動轉簡體字' }: SearchBoxProps) {
     const [query, setQuery] = useState(initialQuery);
     const inputRef = useRef<HTMLInputElement>(null);
 
