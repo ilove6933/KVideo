@@ -31,7 +31,7 @@ export function ResultsHeader({
             </Badge>
           )}
           {!loading && (
-            <Badge variant="primary">{resultsCount} 个视频</Badge>
+            <Badge variant="primary">{resultsCount} ㄍ影片</Badge>
           )}
         </div>
       </div>
