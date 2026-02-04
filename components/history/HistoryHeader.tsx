@@ -13,13 +13,13 @@ export function HistoryHeader({ onClose }: HistoryHeaderProps) {
                     id="history-sidebar-title"
                     className="text-xl font-semibold text-[var(--text-color)]"
                 >
-                    观看历史
+                    查看觀看紀錄
                 </h2>
             </div>
             <button
                 onClick={onClose}
                 className="p-2 hover:bg-[var(--glass-bg)] rounded-full transition-colors cursor-pointer"
-                aria-label="关闭"
+                aria-label="關閉"
             >
                 <Icons.X size={24} className="text-[var(--text-color-secondary)]" />
             </button>
