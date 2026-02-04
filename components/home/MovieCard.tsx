@@ -71,7 +71,7 @@ export const MovieCard = memo(function MovieCard({ movie, onMovieClick }: MovieC
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-[var(--glass-bg)] rounded-[var(--radius-2xl)]">
-              <p className="text-sm text-[var(--text-muted)]">暂无图片</p>
+              <p className="text-sm text-[var(--text-muted)]">暫無圖片</p>
             </div>
           )}
           {movie.rate && parseFloat(movie.rate) > 0 && (
