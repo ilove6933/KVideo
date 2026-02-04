@@ -29,7 +29,7 @@ export function SubscriptionImportTab({
 
     const handleAdd = async () => {
         if (!url.trim() || !name.trim()) {
-            setError("请输入订阅名称和链接");
+            setError("請輸入訂閱名稱和鏈接");
             return;
         }
 
@@ -45,7 +45,7 @@ export function SubscriptionImportTab({
             setUrl('');
             setName('');
         } catch (err: unknown) {
-            setError(err instanceof Error ? err.message : '添加订阅失败');
+            setError(err instanceof Error ? err.message : '添加訂閱失敗');
         } finally {
             setLoading(false);
         }
@@ -69,13 +69,13 @@ export function SubscriptionImportTab({
             <div className="max-h-[60vh] overflow-y-auto px-1">
                 {/* Add New Subscription */}
                 <div className="p-4 bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-[var(--radius-2xl)] space-y-3">
-                    <h4 className="font-semibold text-[var(--text-color)] text-sm">添加新订阅</h4>
+                    <h4 className="font-semibold text-[var(--text-color)] text-sm">添加新訂閱</h4>
                     <div className="grid gap-3">
                         <input
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            placeholder="订阅名称 (例如: 每日更新源)"
+                            placeholder="訂閱名稱 (例如: 每日更新來源)"
                             onKeyDown={handleAddKeydown}
                             className="w-full bg-[color-mix(in_srgb,var(--bg-color)_50%,transparent)] border border-[var(--glass-border)] rounded-[var(--radius-2xl)] px-4 py-2 text-[var(--text-color)] placeholder:text-[var(--text-color-secondary)] focus:outline-none focus:border-[var(--accent-color)]"
                         />
@@ -84,7 +84,7 @@ export function SubscriptionImportTab({
                                 type="url"
                                 value={url}
                                 onChange={(e) => setUrl(e.target.value)}
-                                placeholder="订阅链接 (URL)"
+                                placeholder="訂閱鏈接 (URL)"
                                 onKeyDown={handleAddKeydown}
                                 className="flex-1 bg-[color-mix(in_srgb,var(--bg-color)_50%,transparent)] border border-[var(--glass-border)] rounded-[var(--radius-2xl)] px-4 py-2 text-[var(--text-color)] placeholder:text-[var(--text-color-secondary)] focus:outline-none focus:border-[var(--accent-color)]"
                             />
@@ -104,7 +104,7 @@ export function SubscriptionImportTab({
                 <div className="space-y-3 mt-4">
                     {subscriptions.length === 0 && (
                         <div className="text-center py-8 text-[var(--text-color-secondary)]">
-                            暂无订阅
+                            暫無訂閱
                         </div>
                     )}
 
@@ -141,7 +141,7 @@ export function SubscriptionImportTab({
                                 <button
                                     onClick={() => onRemove(sub.id)}
                                     className="p-2 rounded-[var(--radius-full)] hover:bg-red-100 dark:hover:bg-red-900/30 text-[var(--text-color-secondary)] hover:text-red-500 transition-all"
-                                    title="删除订阅"
+                                    title="删除訂閱"
                                 >
                                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M3 6h18" />
