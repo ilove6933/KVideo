@@ -66,25 +66,25 @@ export function PremiumSourceSettings({
                         onClick={onRestoreDefaults}
                         className="px-4 py-2 rounded-[var(--radius-2xl)] bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-color)] text-sm font-medium hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)] transition-all duration-200 cursor-pointer"
                     >
-                        恢复默认
+                        恢復默認
                     </button>
                     <button
                         onClick={onAddSource}
                         className="px-4 py-2 rounded-[var(--radius-2xl)] bg-[var(--accent-color)] text-white text-sm font-semibold hover:brightness-110 hover:-translate-y-0.5 shadow-[var(--shadow-sm)] transition-all duration-200 cursor-pointer"
                     >
-                        + 添加源
+                        + 添加來源
                     </button>
                 </div>
             </div>
             <p className="text-sm text-[var(--text-color-secondary)] mb-6">
-                管理高级内容来源，调整优先级和启用状态
+                管理高级内容来源，調整優先級和啟用狀態
             </p>
 
             {/* Search Bar */}
             <div className="relative mb-4">
                 <input
                     type="text"
-                    placeholder="搜索源..."
+                    placeholder="搜索來源..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full px-4 py-2 pl-10 rounded-[var(--radius-2xl)] bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-color)] placeholder-[var(--text-color-secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] transition-all duration-200"
@@ -112,7 +112,7 @@ export function PremiumSourceSettings({
                     onClick={() => setShowAllSources(!showAllSources)}
                     className="w-full mt-4 px-4 py-3 rounded-[var(--radius-2xl)] bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-color)] text-sm font-medium hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)] transition-all duration-200 cursor-pointer"
                 >
-                    {showAllSources ? '收起' : `显示全部 (${sources.length})`}
+                    {showAllSources ? '收起' : `顯示全部 (${sources.length})`}
                 </button>
             )}
         </div>
