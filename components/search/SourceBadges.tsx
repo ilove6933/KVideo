@@ -43,7 +43,7 @@ export const SourceBadges = memo(function SourceBadges({
         <div className="flex items-center gap-2 shrink-0 pt-1">
           <Icons.Globe size={16} className="text-[var(--accent-color)]" />
           <span className="text-sm font-semibold text-[var(--text-color)]">
-            视频源 ({sources.length}):
+            影片來源 ({sources.length}):
           </span>
         </div>
 
@@ -62,7 +62,7 @@ export const SourceBadges = memo(function SourceBadges({
                      flex items-center gap-1 transition-colors"
           >
             <Icons.X size={12} />
-            清除筛选 ({selectedSources.size})
+            清除篩選 ({selectedSources.size})
           </button>
         </div>
       )}
