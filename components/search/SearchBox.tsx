@@ -77,7 +77,7 @@ export function SearchBox({ onSearch, onClear, initialQuery = '', placeholder = 
                 onKeyDown={handleKeyDown}
                 placeholder={placeholder}
                 className="text-base sm:text-lg pr-28 sm:pr-36 md:pr-44 truncate"
-                aria-label="搜索视频内容"
+                aria-label="搜索影片内容"
                 aria-expanded={isDropdownOpen}
                 aria-controls="search-history-dropdown"
                 aria-autocomplete="list"
