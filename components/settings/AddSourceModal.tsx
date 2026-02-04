@@ -36,19 +36,19 @@ export function AddSourceModal({ isOpen, onClose, onAdd, existingIds, initialVal
           }`}
       >
         <div className="bg-[var(--glass-bg)] backdrop-blur-xl border border-[var(--glass-border)] rounded-[var(--radius-2xl)] shadow-[var(--shadow-md)] p-6">
-          <ModalHeader title={initialValues ? "编辑视频源" : "添加自定义源"} onClose={onClose} />
+          <ModalHeader title={initialValues ? "編輯影片來源" : "添加自定義來源"} onClose={onClose} />
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="source-name" className="block mb-2 font-medium text-[var(--text-color)]">
-                源名称
+                來源名稱
               </label>
               <input
                 id="source-name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="例如：新视频源"
+                placeholder="例如：新影片源"
                 className="w-full bg-[var(--glass-bg)] backdrop-blur-md border border-[var(--glass-border)] rounded-[var(--radius-2xl)] px-4 py-3 text-[var(--text-color)] placeholder:text-[var(--text-color-secondary)] focus:outline-none focus:border-[var(--accent-color)] focus:ring-4 focus:ring-[color-mix(in_srgb,var(--accent-color)_30%,transparent)] transition-all duration-[0.4s]"
               />
             </div>
