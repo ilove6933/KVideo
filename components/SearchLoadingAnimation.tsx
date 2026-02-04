@@ -59,7 +59,7 @@ export function SearchLoadingAnimation({
     }
   }, [isComplete, onComplete, checkedSources, totalSources]);
 
-  const statusText = `${checkedSources}/${totalSources} 个源`;
+  const statusText = `${checkedSources}/${totalSources} ㄍ源`;
 
   return (
     <div className="w-full space-y-3 animate-fade-in">
@@ -80,7 +80,7 @@ export function SearchLoadingAnimation({
         </svg>
 
         <span className="text-sm font-medium text-[var(--text-color-secondary)]">
-          正在搜索视频源{dots}
+          正在搜索影片來源{dots}
         </span>
       </div>
 
@@ -114,7 +114,7 @@ export function SearchLoadingAnimation({
             {statusText}
             {isPaused && (
               <span className="px-2 py-0.5 rounded-[var(--radius-full)] bg-[var(--glass-bg)] text-[10px]">
-                已暂停
+                已暫停
               </span>
             )}
             {isComplete && (
