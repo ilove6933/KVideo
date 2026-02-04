@@ -75,7 +75,7 @@ export function SourceBadgeList({ sources, selectedSources, onToggleSource }: So
         ref={containerRef}
         className="hidden md:flex md:flex-col md:flex-1 -mx-1 px-1"
         role="group"
-        aria-label="视频源筛选"
+        aria-label="影片來源篩選"
       >
         <div className={`relative transition-all duration-300 z-10 ${!isExpanded ? 'max-h-[50px] overflow-hidden' : 'overflow-visible'
           }`}>
@@ -105,7 +105,7 @@ export function SourceBadgeList({ sources, selectedSources, onToggleSource }: So
             className="mt-2 text-xs text-[var(--text-color-secondary)] hover:text-[var(--accent-color)]
                      flex items-center gap-1 transition-colors self-start cursor-pointer"
           >
-            <span>{isExpanded ? '收起' : '展开更多'}</span>
+            <span>{isExpanded ? '收起' : '展開更多'}</span>
             <Icons.ChevronDown
               size={14}
               className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
@@ -118,7 +118,7 @@ export function SourceBadgeList({ sources, selectedSources, onToggleSource }: So
       <div
         className="flex md:hidden flex-1 -mx-1 px-1 overflow-hidden"
         role="group"
-        aria-label="视频源筛选"
+        aria-label="影片來源篩選"
       >
         <div
           ref={containerRef}
