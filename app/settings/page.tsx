@@ -152,9 +152,9 @@ export default function SettingsPage() {
 
       <ConfirmDialog
         isOpen={isRestoreDefaultsDialogOpen}
-        title="恢复默认源"
-        message="这将重置所有视频源为默认配置。自定义源将被删除。是否继续？"
-        confirmText="恢复"
+        title="恢復一開始的來源"
+        message="重製所有來源設定。自定的來源將被刪除。是否繼續？"
+        confirmText="恢復"
         cancelText="取消"
         onConfirm={handleRestoreDefaults}
         onCancel={() => setIsRestoreDefaultsDialogOpen(false)}
@@ -162,8 +162,8 @@ export default function SettingsPage() {
 
       <ConfirmDialog
         isOpen={isResetDialogOpen}
-        title="清除所有数据"
-        message="这将删除所有设置、历史记录、Cookie 和缓存。此操作不可撤销。是否继续？"
+        title="清除所有數據"
+        message="這將刪除所有設置、歷史紀錄、Cookie 和緩存。此操作一去不復返。是否繼續？"
         confirmText="清除"
         cancelText="取消"
         onConfirm={handleResetAll}
