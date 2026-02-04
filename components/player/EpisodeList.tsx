@@ -78,7 +78,7 @@ export function EpisodeList({
     <Card hover={false}>
       <h3 className="text-lg sm:text-xl font-bold text-[var(--text-color)] mb-4 flex items-center gap-2">
         <Icons.List size={20} className="sm:w-6 sm:h-6" />
-        <span>选集</span>
+        <span>選集</span>
         {episodes && (
           <Badge variant="primary">{episodes.length}</Badge>
         )}
@@ -93,8 +93,8 @@ export function EpisodeList({
                 : 'bg-[var(--glass-bg)] text-[var(--text-color-secondary)] hover:bg-[var(--glass-hover)] border border-[var(--glass-border)]'
               }
             `}
-            aria-label={isReversed ? '恢复正序' : '倒序排列'}
-            title={isReversed ? '恢复正序' : '倒序排列'}
+            aria-label={isReversed ? '恢復小到大' : '大到小排列'}
+            title={isReversed ? '恢复小到大' : '大到小排列'}
           >
             <Icons.ArrowUpDown size={16} />
           </button>
@@ -105,7 +105,7 @@ export function EpisodeList({
         ref={listRef}
         className="max-h-[400px] sm:max-h-[600px] overflow-y-auto space-y-2 pr-2"
         role="radiogroup"
-        aria-label="剧集选择"
+        aria-label="劇集選擇"
       >
         {displayEpisodes && displayEpisodes.length > 0 ? (
           displayEpisodes.map((episode, displayIndex) => {
@@ -151,7 +151,7 @@ export function EpisodeList({
         ) : (
           <div className="text-center py-8 text-[var(--text-secondary)]">
             <Icons.Inbox size={48} className="text-[var(--text-color-secondary)] mx-auto mb-2" />
-            <p>暂无剧集信息</p>
+            <p>暫無劇集資訊</p>
           </div>
         )}
       </div>
