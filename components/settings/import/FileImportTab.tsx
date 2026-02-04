@@ -28,12 +28,12 @@ export function FileImportTab({ onImport }: FileImportTabProps) {
                     setSuccess(true);
                     setError('');
                 } else {
-                    setError('导入失败：文件格式无效');
+                    setError('導入失敗：文件格式無效');
                     setSuccess(false);
                 }
             } catch (err) {
                 console.error(err);
-                setError('导入失败：无法读取文件或格式错误');
+                setError('導入失敗：無法讀取文件或格式錯誤');
                 setSuccess(false);
             }
         };
@@ -49,7 +49,7 @@ export function FileImportTab({ onImport }: FileImportTabProps) {
         <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
             <div className="p-4 bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-[var(--radius-2xl)]">
                 <p className="text-[var(--text-color-secondary)] text-sm mb-4">
-                    选择之前导出的设置文件（JSON 配置文件）。支持新旧版本格式。
+                    選擇之前導出的設置文件（JSON 配置文件）。支持新舊版本格式。
                 </p>
 
                 <input
@@ -73,7 +73,7 @@ export function FileImportTab({ onImport }: FileImportTabProps) {
                                 <line x1="12" y1="3" x2="12" y2="15" />
                             </svg>
                         </div>
-                        <span className="font-medium">点击选择文件</span>
+                        <span className="font-medium">點擊選擇文件</span>
                     </div>
                 </button>
 
@@ -88,7 +88,7 @@ export function FileImportTab({ onImport }: FileImportTabProps) {
                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M20 6L9 17l-5-5" />
                         </svg>
-                        导入成功！正在刷新...
+                        導入成功！正在刷新...
                     </div>
                 )}
             </div>
