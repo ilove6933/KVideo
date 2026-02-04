@@ -213,14 +213,13 @@ function PlayerContent() {
                     </span>
                   </div>
 
-                  {/* --- 修改：強制顯示下載按鈕 --- */}
+                  {/* 強制顯示下載按鈕 (如果沒有連結則顯示禁用狀態) */}
                   <div className="flex items-center">
                     <DownloadButton 
                       url={playUrl || ''} 
                       title={videoData.vod_name || title || 'video'} 
                     />
                   </div>
-                  {/* --------------------------- */}
                   
                 </div>
               )}
@@ -229,7 +228,7 @@ function PlayerContent() {
             {/* Sidebar with sticky wrapper */}
             <div className="lg:col-span-1">
               <div className="lg:sticky lg:top-32 space-y-6">
-                {/* Mobile Tabs */}
+                {/* Mobile Tabs - 修復 TypeScript 錯誤的地方 */}
                 {groupedSources.length > 0 && (
                   <SegmentedControl
                     options={[
@@ -238,7 +237,8 @@ function PlayerContent() {
                       { label: '来源', value: 'sources' as const },
                     ].filter(opt => opt.value !== 'sources' || groupedSources.length > 1)}
                     value={activeTab}
-                    onChange={setActiveTab}
+                    // 這裡加上了類型斷言，解決 build error
+                    onChange={(val) => setActiveTab(val as 'episodes' | 'info' | 'sources')}
                     className="lg:hidden mb-4"
                   />
                 )}
