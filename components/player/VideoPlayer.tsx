@@ -203,7 +203,7 @@ export function VideoPlayer({
             ? 'bg-orange-500/80 text-white'
             : 'bg-green-500/80 text-white'
             }`}>
-            {useProxy ? '代理模式' : '直连模式'}
+            {useProxy ? '代理模式' : '直連模式'}
           </span>
         </div>
       )}
