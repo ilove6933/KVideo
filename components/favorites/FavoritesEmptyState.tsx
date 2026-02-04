@@ -13,10 +13,10 @@ export function FavoritesEmptyState() {
                 className="text-[var(--text-color-secondary)] opacity-50 mb-4"
             />
             <p className="text-[var(--text-color-secondary)] text-lg">
-                暂无收藏
+                目前沒有收藏
             </p>
             <p className="text-[var(--text-color-secondary)] text-sm mt-2 opacity-70">
-                点击视频上的心形按钮即可收藏
+                點影片上的愛心即可收藏
             </p>
         </div>
     );
