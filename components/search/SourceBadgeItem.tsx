@@ -42,7 +42,7 @@ export function SourceBadgeItem({
       }}
       tabIndex={0}
       aria-pressed={isSelected}
-      aria-label={`${name} 视频源，${count} 个视频${isSelected ? '，已选中' : ''}`}
+      aria-label={`${name} 影片源，${count} ㄍ影片${isSelected ? '，已選中' : ''}`}
       className={`
         inline-flex items-center gap-1.5 px-4 py-2
         rounded-full
