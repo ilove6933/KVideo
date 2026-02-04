@@ -43,7 +43,7 @@ export const TypeBadges = memo(function TypeBadges({
         <div className="flex items-center gap-2 shrink-0 pt-1">
           <Icons.Tag size={16} className="text-[var(--accent-color)]" />
           <span className="text-sm font-semibold text-[var(--text-color)]">
-            分类标签 ({badges.length}):
+            分類標籤 ({badges.length}):
           </span>
         </div>
 
@@ -62,7 +62,7 @@ export const TypeBadges = memo(function TypeBadges({
                      flex items-center gap-1 transition-colors"
           >
             <Icons.X size={12} />
-            清除筛选 ({selectedTypes.size})
+            清除篩選 ({selectedTypes.size})
           </button>
         </div>
       )}
