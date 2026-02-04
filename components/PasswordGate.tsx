@@ -172,8 +172,8 @@ export function PasswordGate({ children, hasEnvPassword: initialHasEnvPassword }
                     </div>
 
                     <div className="text-center space-y-2">
-                        <h2 className="text-2xl font-bold">訪問受限</h2>
-                        <p className="text-[var(--text-color-secondary)]">請输入訪問密碼</p>
+                        <h2 className="text-2xl font-bold">你有密碼嗎?</h2>
+                        <p className="text-[var(--text-color-secondary)]"輸入密碼阿</p>
                     </div>
 
                     <div className="w-full space-y-4">
