@@ -17,5 +17,5 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   title: process.env.NEXT_PUBLIC_SITE_TITLE || "吳宗翰好帥",
   description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || "吳宗翰好帥",
-  name: process.env.NEXT_PUBLIC_SITE_NAME || "KVideo",
+  name: process.env.NEXT_PUBLIC_SITE_NAME || "吳宗翰好帥",
 };
