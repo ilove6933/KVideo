@@ -37,7 +37,7 @@ export function VideoPlayerError({
                     <div className="absolute inset-0 blur-xl bg-red-500/30 rounded-full -z-10" />
                 </div>
 
-                <h3>播放失败</h3>
+                <h3>播放失敗</h3>
                 <p>{error}</p>
 
                 {/* Action Buttons */}
@@ -55,7 +55,7 @@ export function VideoPlayerError({
                             className="btn-glass px-4 py-2 flex items-center gap-2 !bg-[var(--accent-color)]/80 hover:!bg-[var(--accent-color)]"
                         >
                             <Icons.RefreshCw size={18} />
-                            <span>重试 ({retryCount}/{maxRetries})</span>
+                            <span>重試 ({retryCount}/{maxRetries})</span>
                         </button>
                     )}
                 </div>
