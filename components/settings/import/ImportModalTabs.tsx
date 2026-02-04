@@ -7,9 +7,9 @@ interface ImportModalTabsProps {
 
 export function ImportModalTabs({ activeTab, onTabChange }: ImportModalTabsProps) {
     const tabs = [
-        { id: 'file', label: '文件导入' },
-        { id: 'link', label: '链接导入' },
-        { id: 'subscription', label: '订阅管理' },
+        { id: 'file', label: '文件導入' },
+        { id: 'link', label: '連接導入' },
+        { id: 'subscription', label: '訂閱管理' },
     ] as const;
 
     return (
