@@ -62,7 +62,7 @@ async function handleTypesRequest(sourceList: any[]) {
         // Add "Recommend" tag first
         allTags.push({
             id: 'recommend',
-            label: '今日推荐',
+            label: '今日推薦',
             value: ''
         });
 
