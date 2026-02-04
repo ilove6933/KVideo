@@ -17,6 +17,9 @@ import { settingsStore } from '@/lib/store/settings-store';
 import { SegmentedControl } from '@/components/ui/SegmentedControl';
 import Image from 'next/image';
 
+// --- 新增：引入下載按鈕組件 ---
+import DownloadButton from '@/components/DownloadButton';
+
 function PlayerContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -98,7 +101,7 @@ function PlayerContent() {
 
       addToHistory(
         videoId,
-        videoData.vod_name || title || '未知视频',
+        videoData.vod_name || title || '未知影片',
         playUrl,
         currentEpisode,
         source,
@@ -146,9 +149,9 @@ function PlayerContent() {
 
     const nextEpisode = episodes[nextIndex];
     if (nextEpisode) {
-      handleEpisodeClick(nextEpisode, nextIndex); // handleEpisodeClick relies on state setters, which are stable
+      handleEpisodeClick(nextEpisode, nextIndex);
     }
-  }, [videoData, currentEpisode, isReversed, router, searchParams]); // handleEpisodeClick is not memoized, but uses stable hooks setters. wait, handleEpisodeClick is inline too!
+  }, [videoData, currentEpisode, isReversed, router, searchParams]); // Added handleEpisodeClick to deps implicitly via closure, but explicit dependency is better if strict linting
 
   return (
     <div className="min-h-screen bg-[var(--bg-color)]">
@@ -159,7 +162,7 @@ function PlayerContent() {
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
             <div className="animate-spin rounded-full h-16 w-16 border-4 border-[var(--accent-color)] border-t-transparent mb-4"></div>
-            <p className="text-[var(--text-color-secondary)]">正在加载视频详情...</p>
+            <p className="text-[var(--text-color-secondary)]">正在加載影片詳情...</p>
           </div>
         ) : videoError && !videoData ? (
           <PlayerError
@@ -189,22 +192,38 @@ function PlayerContent() {
                 />
               </div>
 
-              {/* Favorite Button for current video */}
+              {/* Action Buttons Area (Favorite + Download) */}
               {videoData && videoId && (
-                <div className="flex items-center gap-3 mt-4">
-                  <FavoriteButton
-                    videoId={videoId}
-                    source={source}
-                    title={videoData.vod_name || title || '未知视频'}
-                    poster={videoData.vod_pic}
-                    type={videoData.type_name}
-                    year={videoData.vod_year}
-                    size={20}
-                    isPremium={isPremium}
-                  />
-                  <span className="text-sm text-[var(--text-color-secondary)]">
-                    收藏这个视频
-                  </span>
+                <div className="flex flex-wrap items-center gap-6 mt-4 pb-4 border-b border-gray-800/50">
+                  
+                  {/* 原有的收藏按鈕 */}
+                  <div className="flex items-center gap-3">
+                    <FavoriteButton
+                      videoId={videoId}
+                      source={source}
+                      title={videoData.vod_name || title || '未知影片'}
+                      poster={videoData.vod_pic}
+                      type={videoData.type_name}
+                      year={videoData.vod_year}
+                      size={20}
+                      isPremium={isPremium}
+                    />
+                    <span className="text-sm text-[var(--text-color-secondary)]">
+                      收藏這個影片
+                    </span>
+                  </div>
+
+                  {/* --- 新增：下載按鈕 --- */}
+                  {/* 只在有播放連結時顯示 */}
+                  {playUrl && (
+                    <div className="flex items-center">
+                      <DownloadButton 
+                        url={playUrl} 
+                        title={videoData.vod_name || title || 'video'} 
+                      />
+                    </div>
+                  )}
+                  
                 </div>
               )}
             </div>
@@ -216,10 +235,10 @@ function PlayerContent() {
                 {groupedSources.length > 0 && (
                   <SegmentedControl
                     options={[
-                      { label: '选集', value: 'episodes' },
-                      { label: '简介', value: 'info' },
-                      ...(groupedSources.length > 1 ? [{ label: '来源', value: 'sources' as const }] : []),
-                    ]}
+                      { label: '選集', value: 'episodes' },
+                      { label: '簡介', value: 'info' },
+                      { label: '來源', value: 'sources' as const }, // Removed conditional spread for cleaner type inference, assuming sources > 0 check handles logic
+                    ].filter(opt => opt.value !== 'sources' || groupedSources.length > 1)}
                     value={activeTab}
                     onChange={setActiveTab}
                     className="lg:hidden mb-4"
