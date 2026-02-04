@@ -114,7 +114,7 @@ export function SourceSelector({
                     className="flex items-center gap-1.5 text-sm px-3 py-1.5"
                 >
                     <Icons.RefreshCw size={14} className={isLoading ? 'animate-spin' : ''} />
-                    刷新延迟
+                    刷新延遲
                 </Button>
             </div>
 
