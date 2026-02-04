@@ -15,7 +15,7 @@ export function PlayerError({ error, onBack, onRetry }: PlayerErrorProps) {
     <div className="flex flex-col items-center justify-center py-20 text-center">
       <Card className="max-w-2xl">
         <Icons.AlertTriangle size={64} className="mx-auto mb-4 text-red-500" />
-        <h2 className="text-2xl font-bold text-[var(--text-color)] mb-4">视频源不可用</h2>
+        <h2 className="text-2xl font-bold text-[var(--text-color)] mb-4">影片源不可用</h2>
         <p className="text-[var(--text-color-secondary)] mb-6">{error}</p>
         <div className="flex gap-3 justify-center">
           <Button 
@@ -32,7 +32,7 @@ export function PlayerError({ error, onBack, onRetry }: PlayerErrorProps) {
             className="flex items-center gap-2"
           >
             <Icons.RefreshCw size={20} />
-            <span>重试</span>
+            <span>重試</span>
           </Button>
         </div>
       </Card>
