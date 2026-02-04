@@ -38,14 +38,14 @@ export function useAddSourceForm({ isOpen, existingIds, onAdd, onClose, initialV
         setError('');
 
         if (!name.trim() || !url.trim()) {
-            setError('请填写所有字段');
+            setError('請填寫所有字段');
             return;
         }
 
         try {
             new URL(url);
         } catch {
-            setError('请输入有效的 URL');
+            setError('請输入有效的 URL');
             return;
         }
 
@@ -58,7 +58,7 @@ export function useAddSourceForm({ isOpen, existingIds, onAdd, onClose, initialV
         if (!id) {
             id = name.toLowerCase().replace(/[^a-z0-9]/g, '-');
             if (existingIds.includes(id)) {
-                setError('此源名称已存在');
+                setError('此源名稱已存在');
                 return;
             }
         }
