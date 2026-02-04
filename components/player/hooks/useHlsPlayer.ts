@@ -142,7 +142,7 @@ export function useHlsPlayer({
                             );
                             if (hasHEVC) {
                                 console.warn('[HLS] ⚠️ HEVC detected');
-                                onError?.('检测到 HEVC/H.265 编码，当前浏览器可能不支持');
+                                onError?.('偵測到 HEVC/H.265 編碼，目前瀏覽器可能不支持');
                             }
                         }
                     }
@@ -168,7 +168,7 @@ export function useHlsPlayer({
                                 if (networkErrorRetries <= MAX_RETRIES) {
                                     hls?.startLoad();
                                 } else {
-                                    onError?.('网络错误：无法加载视频流');
+                                    onError?.('網路怪怪的：沒辦法加載影片');
                                     hls?.destroy();
                                 }
                                 break;
@@ -177,13 +177,13 @@ export function useHlsPlayer({
                                 if (mediaErrorRetries <= MAX_RETRIES) {
                                     hls?.recoverMediaError();
                                 } else {
-                                    onError?.('媒体错误：视频格式不支持或已损坏');
+                                    onError?.('影片錯誤：格式不支持或壞掉了');
                                     hls?.destroy();
                                 }
                                 break;
                             default:
                                 console.error('[HLS] Fatal error, cannot recover:', data);
-                                onError?.(`致命错误：${data.details || '未知错误'}`);
+                                onError?.(`致命錯誤：${data.details || '未知錯誤'}`);
                                 hls?.destroy();
                                 break;
                         }
@@ -323,7 +323,7 @@ export function useHlsPlayer({
             }
         } else {
             console.error('[HLS] HLS not supported');
-            onError?.('当前浏览器不支持 HLS 视频播放');
+            onError?.('目前瀏覽器不支持 HLS 影片播放');
         }
 
         return () => {
