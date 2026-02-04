@@ -42,7 +42,7 @@ export function SearchHistoryListItem({
                 </span>
                 {item.resultCount !== undefined && (
                     <span className="text-xs text-[var(--text-color-secondary)] flex-shrink-0">
-                        {item.resultCount} 个结果
+                        {item.resultCount} 個结果
                     </span>
                 )}
             </div>
