@@ -83,8 +83,8 @@ function getEnvSubscriptions(customValue?: string): SourceSubscription[] {
       if (!url.startsWith('http')) return null;
 
       const name = urls.length > 1
-        ? `系统预设源 ${index + 1}`
-        : `系统预设源`;
+        ? `系統預設來源 ${index + 1}`
+        : `系統預設來源`;
 
       return createSubscription(name, url);
     }).filter((s): s is SourceSubscription => s !== null);
