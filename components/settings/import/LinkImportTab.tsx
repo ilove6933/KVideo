@@ -29,7 +29,7 @@ export function LinkImportTab({ onImport }: LinkImportTabProps) {
             setPreview(result);
         } catch (err: unknown) {
             console.error(err);
-            setError(err instanceof Error ? err.message : '获取链接失败，请检查URL是否正确或是否存在跨域限制');
+            setError(err instanceof Error ? err.message : '獲取連結失敗，請檢查URL是否正確或是否存在跨域限制');
         } finally {
             setLoading(false);
         }
@@ -45,10 +45,10 @@ export function LinkImportTab({ onImport }: LinkImportTabProps) {
                 setPreview(null);
                 setUrl('');
             } else {
-                setError('导入处理失败');
+                setError('導入處理失敗');
             }
         } catch {
-            setError('导入过程发生错误');
+            setError('導入過程發生錯誤');
         }
     };
 
@@ -56,7 +56,7 @@ export function LinkImportTab({ onImport }: LinkImportTabProps) {
         <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
             <div className="p-1 max-h-[60vh] overflow-y-auto">
                 <label className="block text-sm font-medium text-[var(--text-color)] mb-2">
-                    源配置链接
+                    源配置鏈接
                 </label>
                 <div className="flex gap-2">
                     <input
@@ -76,13 +76,13 @@ export function LinkImportTab({ onImport }: LinkImportTabProps) {
                         {loading ? (
                             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                         ) : (
-                            '获取'
+                            '獲取'
                         )}
                     </button>
                 </div>
 
                 <p className="text-xs text-[var(--text-color-secondary)] mt-2 ml-1">
-                    支持 JSON 配置文件格式的单个或多个源配置链接
+                    支持 JSON 配置文件格式的單ㄍ或多ㄍ源配置鏈接
                 </p>
 
                 {error && (
@@ -116,7 +116,7 @@ export function LinkImportTab({ onImport }: LinkImportTabProps) {
                             onClick={handleConfirmImport}
                             className="w-full py-3 rounded-[var(--radius-2xl)] bg-[var(--accent-color)] text-white font-semibold hover:brightness-110 shadow-[var(--shadow-md)] transition-all active:scale-[0.98]"
                         >
-                            确认导入 {preview.totalCount} 个源
+                            確認導入 {preview.totalCount} ㄍ源
                         </button>
                     </div>
                 )}
@@ -126,7 +126,7 @@ export function LinkImportTab({ onImport }: LinkImportTabProps) {
                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M20 6L9 17l-5-5" />
                         </svg>
-                        导入成功！正在刷新...
+                        導入成功！正在刷新...
                     </div>
                 )}
             </div>
