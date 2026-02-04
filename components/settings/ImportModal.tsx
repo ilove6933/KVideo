@@ -58,12 +58,12 @@ export function ImportModal({
         <div className="bg-[var(--glass-bg)] backdrop-blur-xl border border-[var(--glass-border)] rounded-[var(--radius-2xl)] shadow-[var(--shadow-md)] p-6 flex flex-col max-h-[85vh]">
           <div className="flex items-center justify-between mb-6 shrink-0">
             <h3 className="text-xl font-semibold text-[var(--text-color)]">
-              导入设置
+              導入設置
             </h3>
             <button
               onClick={onClose}
               className="w-8 h-8 flex items-center justify-center rounded-[var(--radius-full)] bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-color)] hover:bg-[color-mix(in_srgb,var(--accent-color)_10%,transparent)] transition-all duration-200"
-              aria-label="关闭"
+              aria-label="關閉"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 6L6 18M6 6l12 12" />
