@@ -87,7 +87,7 @@ export const VideoGroupCard = memo<VideoGroupCardProps>(({
                 href={videoUrl}
                 onClick={(e) => onCardClick(e, cardId, videoUrl)}
                 role="listitem"
-                aria-label={`${name} - ${videos.length} 个源${representative.vod_remarks ? ` - ${representative.vod_remarks}` : ''}`}
+                aria-label={`${name} - ${videos.length} ㄍ源${representative.vod_remarks ? ` - ${representative.vod_remarks}` : ''}`}
                 prefetch={false}
                 className="group cursor-pointer hover:translate-y-[-2px] transition-transform duration-200 ease-out block h-full"
             >
@@ -168,7 +168,7 @@ export const VideoGroupCard = memo<VideoGroupCardProps>(({
                             <div className="absolute bottom-0 left-0 right-0 p-3">
                                 {isActive && (
                                     <div className="lg:hidden text-white/90 text-xs mb-2 font-medium">
-                                        再次点击播放 →
+                                        再次點擊播放 →
                                     </div>
                                 )}
                                 {representative.type_name && (
