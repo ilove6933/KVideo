@@ -15,7 +15,7 @@ export interface SiteConfig {
  * Note: NEXT_PUBLIC_ environment variables are statically embedded at build time
  */
 export const siteConfig: SiteConfig = {
-  title: process.env.NEXT_PUBLIC_SITE_TITLE || "吳宗翰好帥",
-  description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || "吳宗翰好帥",
-  name: process.env.NEXT_PUBLIC_SITE_NAME || "吳宗翰好帥",
+  title: process.env.NEXT_PUBLIC_SITE_TITLE || "WuVideo",
+  description: process.env.NEXT_PUBLIC_SITE_DESCRIPTION || "WuVideo",
+  name: process.env.NEXT_PUBLIC_SITE_NAME || "WuVideo",
 };
